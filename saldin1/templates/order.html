@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order {{ item_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Toko A</h1>
+    <div class="order">
+        <img src="{{ url_for('static', filename='{{ item_name | lower | replace(" ", "_") }}.png') }}" alt="{{ item_name }}">
+        <form method="post">
+            <p>Harga: Rp.{{ price }}</p>
+            <label for="quantity">Jumlah pesanan:</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <button type="submit">Pesan</button>
+        </form>
+    </div>
+    <footer>
+        <p>Ikuti Kami Di:</p>
+        <img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook">
+    </footer>
+</body>
+</html>
